@@ -9,7 +9,19 @@ public class Carrera{
     private String director;
     Date fechaini;
     
-    public Carrera(){
+    public Carrera()
+    {
+        this.codigo="015";
+        this.nombre="Ingeniería de Sistemas";
+        this.numSemestres=10;
+        this.numCreditos=150;
+        this.titulo="Ingeniero de Sistemas";
+        this.director="Oscar Gallardo";
+        this.fechaini= new java.util.Date();
+    }
+    
+    public Carrera(String codigo,String nombre,Integer numsem,Integer numcreditos,String titulo,String director,
+    Date fechaini){
         this.codigo= codigo;
         this.nombre= nombre;
         this.telefono= telefono;
@@ -68,6 +80,10 @@ public class Carrera{
     }
     public void setFechaInicial(Date fechaini){
         this.fechaini= fechaini;
+    }
+    
+    public void imprimirCreditos(){
+        System.out.println("Los creditos de la carrera so:" +getNumCreditos());
     }
 }
     

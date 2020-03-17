@@ -1,4 +1,4 @@
-
+import java.util.*;
 public class Estudiante{
     private String nombre;
     private String codigo;
@@ -13,7 +13,23 @@ public class Estudiante{
     private String estado;
 
     private Carrera carrera;
-
+    
+    public Estudiante()
+    {
+        this.codigo= "0151803";
+        this.nombre= "Claudia Gómez";
+        this.telefono= "3112490070";
+        this.email= "claudiaygomez@ufps.edu.co";
+        this.direccion= "Av 17 Libertadores";
+        this.edad= 34;
+        this.documento= "37391391";
+        this.tipoDocumento= "cc";
+        this.creditos= 120;
+        this.semestre= 20;
+        this.estado= "Activo";
+        this.carrera= new Carrera();
+    }
+    
     public Estudiante(String nombre, String codigo, String telefono,
     String email, String direccion, Integer edad,
     String documento, String tipoDocumento,
@@ -151,6 +167,15 @@ public class Estudiante{
         }
     }
 
+     public void matricularProyecto(){
+        if(getCreditos()>=(carrera.getNumCreditos()*0.7)&&getSemestre()>=7)
+        {
+            System.out.println("Señor estudiante usted ya puede matricular proyecto de grado");}
+
+        else
+            System.out.println("No puedes matricular poryecto de grado te faltan creditos y semestres por cursar");
+    }
+    
     public void promedioCreditosSemestre(){    
         Float promedio=(float)(getCreditos()/getSemestre());
         System.out.println("El promedio de creditos cursados es: "+promedio);    
